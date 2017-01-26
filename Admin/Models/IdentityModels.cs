@@ -3,6 +3,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using Admin.EntityConfiguration;
 
 namespace Admin.Models
 {
@@ -23,6 +24,15 @@ namespace Admin.Models
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
+        }
+
+        public DbSet<Product> Products { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Configurations.Add(new ProductConfiguration());
+
+            base.OnModelCreating(modelBuilder);
         }
 
         public static ApplicationDbContext Create()
