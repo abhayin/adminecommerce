@@ -26,11 +26,17 @@ namespace Admin.Models
         {
         }
 
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderItems> OrderItems { get; set; }
         public DbSet<Product> Products { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new ProductConfiguration());
+            modelBuilder.Configurations.Add(new CategoryConfiguration());
+            modelBuilder.Configurations.Add(new OrderConfiguration());
+            modelBuilder.Configurations.Add(new OrderItemConfiguration());
 
             base.OnModelCreating(modelBuilder);
         }

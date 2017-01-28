@@ -23,6 +23,17 @@ namespace Admin
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/preloadscripts").Include(
+                      "~/assets/css/please-wait.css",
+                      "~/assets/js/please-wait.min.js",
+                      "~/assets/js/modernizr.js",
+                      "~/assets/js/jquery.js"));
+
+
+
+
+
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/assets/css/bootstrap.css",
                       "~/Content/site.css"));

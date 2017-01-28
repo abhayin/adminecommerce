@@ -15,12 +15,17 @@ namespace Admin.EntityConfiguration
                 .Property(p => p.ProductId)
                 .IsRequired();
 
+            HasOptional(p => p.Category)
+                .WithRequired(p => p.Product);
+
             Property(p=>p.ProductName)
                 .IsRequired()
                 .HasMaxLength(255);
 
             Property(p => p.Price)
                 .IsRequired();
+
+
         }
     }
 }

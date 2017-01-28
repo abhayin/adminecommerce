@@ -173,13 +173,28 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="EntityConfiguration\CategoryConfiguration.cs" />
+    <Compile Include="EntityConfiguration\OrderConfiguration.cs" />
+    <Compile Include="EntityConfiguration\OrderItemConfiguration.cs" />
     <Compile Include="EntityConfiguration\ProductConfiguration.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701261749572_InitialModel.cs" />
+    <Compile Include="Migrations\201701261749572_InitialModel.Designer.cs">
+      <DependentUpon>201701261749572_InitialModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701261847144_AddOrderAndOrderItemConfig.cs" />
+    <Compile Include="Migrations\201701261847144_AddOrderAndOrderItemConfig.Designer.cs">
+      <DependentUpon>201701261847144_AddOrderAndOrderItemConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Category.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\OrderItems.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -522,6 +537,14 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201701261749572_InitialModel.resx">
+      <DependentUpon>201701261749572_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701261847144_AddOrderAndOrderItemConfig.resx">
+      <DependentUpon>201701261847144_AddOrderAndOrderItemConfig.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
