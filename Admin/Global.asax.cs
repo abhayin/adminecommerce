@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Admin.App_Start;
+using AutoMapper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,6 +15,7 @@ namespace Admin
     {
         protected void Application_Start()
         {
+            Mapper.Initialize(m => m.AddProfile<MappingProfile>());
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);

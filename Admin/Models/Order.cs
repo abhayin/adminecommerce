@@ -13,5 +13,6 @@ namespace Admin.Models
         public int Quantity { get; set; }
         public decimal Weight { get; set; }
         public ICollection<OrderItems> Items { get; set; }
+        public bool Enabled { get; set; }
     }
 }
