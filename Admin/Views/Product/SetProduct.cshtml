@@ -1,4 +1,4 @@
-﻿@model Admin.Dtos.ProductDto
+﻿@model Admin.ViewModels.ProductViewModel
 
 @{
     ViewBag.Title = "Set Product";
@@ -12,88 +12,63 @@
     <div class="form-horizontal">
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.ProductId, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ProductId, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ProductId, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.ProductName, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ProductName, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ProductName, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Price, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.DiscountPrice, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.DiscountPrice, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.DiscountPrice, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Weight, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Weight, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Weight, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.MyProperty, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.MyProperty, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.MyProperty, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.CategoryId, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.CategoryId, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.CategoryId, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Enabled, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.Enabled)
-                    @Html.ValidationMessageFor(model => model.Enabled, "", new { @class = "text-danger" })
+        <div class="col-md-12">
+            <div class="box box-info">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Horizontal Form</h3>
                 </div>
-            </div>
-        </div>
+                <form class="form-horizontal">
+                    <div class="box-body">
+                        <div class="form-group">
+                            @Html.DisplayNameFor(m => m.ProductDto.ProductName)
+                            <div class="col-sm-10">
+                                @Html.TextBoxFor(m => m.ProductDto.ProductName, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.ProductDto.ProductName, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.DisplayNameFor(m => m.ProductDto.CategoryId)
+                            <div class="col-sm-10">
+                                @Html.DropDownListFor(m => m.ProductDto.CategoryId, new SelectList(Model.CategoryDropdown), new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.ProductDto.CategoryId, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.DisplayNameFor(m => m.ProductDto.Price)
+                            <div class="col-sm-10">
+                                @Html.TextBoxFor(m => m.ProductDto.Price, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.ProductDto.Price, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.DisplayNameFor(m => m.ProductDto.DiscountPrice)
+                            <div class="col-sm-10">
+                                @Html.TextBoxFor(m => m.ProductDto.DiscountPrice, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.ProductDto.DiscountPrice, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.DisplayNameFor(m => m.ProductDto.Weight)
+                            <div class="col-sm-10">
+                                @Html.TextBoxFor(m => m.ProductDto.Weight, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.ProductDto.Weight, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.DisplayNameFor(m => m.ProductDto.Description)
+                            <div class="col-sm-10">
+                                @Html.TextBoxFor(m => m.ProductDto.Description, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.ProductDto.Description, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
-        </div>
+                    </div><!-- /.box-body -->
+                    <div class="box-footer">
+                        <button type="submit" class="btn btn-default">Cancel</button>
+                        <button type="submit" class="btn btn-info pull-right">Sign in</button>
+                    </div><!-- /.box-footer -->
+                </form>
+            </div><!-- /.box -->
+          </div>
     </div>
 }
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>

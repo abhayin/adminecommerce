@@ -177,6 +177,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Dtos\CategoryDto.cs" />
     <Compile Include="Dtos\ProductDto.cs" />
     <Compile Include="EntityConfiguration\CategoryConfiguration.cs" />
     <Compile Include="EntityConfiguration\OrderConfiguration.cs" />
@@ -186,6 +187,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="App_Start\MappingProfile.cs" />
+    <Compile Include="IRepository\ICategoryRepository.cs" />
     <Compile Include="IRepository\IProductrepository.cs" />
     <Compile Include="IRepository\IUnitOfWork.cs" />
     <Compile Include="Migrations\201701261749572_InitialModel.cs" />
@@ -210,8 +212,10 @@
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\CategoryRepository.cs" />
     <Compile Include="Repository\ProductRepository.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\ProductViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="admin-lte\css\AdminLTE.css" />
@@ -567,7 +571,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="ViewModels\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

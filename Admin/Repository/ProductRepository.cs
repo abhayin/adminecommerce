@@ -5,6 +5,7 @@ using System.Web;
 using System.Data.Entity;
 using Admin.Models;
 using Admin.IRepository;
+using Admin.Dtos;
 
 namespace Admin.Repository
 {

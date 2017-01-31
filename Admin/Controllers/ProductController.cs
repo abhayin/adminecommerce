@@ -4,6 +4,8 @@ using Admin.Repository;
 using AutoMapper;
 using System.Web.Mvc;
 using System.Collections.Generic;
+using Admin.ViewModels;
+using Admin.IRepository;
 
 namespace Admin.Controllers
 {
@@ -23,7 +25,8 @@ namespace Admin.Controllers
         public ActionResult SetProduct()
         {
             ViewBag.TypeOfController = "";
-            return View(new ProductDto());
+            var viewModel = new ProductViewModel();
+            return View(viewModel);
         }
 
         [HttpPost]
@@ -42,6 +45,12 @@ namespace Admin.Controllers
 
         [HttpPost]
         public ActionResult Remove(int Id)
+        {
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public ActionResult RemoveBetweenRange(int[] Ids)
         {
             return RedirectToAction("Index");
         }
