@@ -17,9 +17,10 @@ namespace Admin.Models
         public decimal Price { get; set; }
         public decimal DiscountPrice { get; set; }
         public decimal Weight { get; set; }
-        public int MyProperty { get; set; }
+        public int UnitAvailabel { get; set; }
+        public string ProductImage { get; set; }
         public int CategoryId { get; set; }
         public Category Category { get; set; }
-        public bool Enabled { get; set; }
+        public bool DisplayStatus { get; set; }
     }
 }

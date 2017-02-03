@@ -14,6 +14,8 @@ namespace Admin.App_Start
         {
             Mapper.CreateMap<ProductDto, Product>();
             Mapper.CreateMap<Product, ProductDto>();
+            Mapper.CreateMap<Category, CategoryDto>();
+            Mapper.CreateMap<CategoryDto, Category>();
         }
     }
 }

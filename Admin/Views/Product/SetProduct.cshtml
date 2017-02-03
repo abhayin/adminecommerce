@@ -1,74 +1,125 @@
 ﻿@model Admin.ViewModels.ProductViewModel
-
 @{
-    ViewBag.Title = "Set Product";
+    ViewBag.Title = "Product";
     Layout = "~/Views/Shared/_LayOut.cshtml";
 }
 
-@using (Html.BeginForm()) 
-{
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="col-md-12">
-            <div class="box box-info">
-                <div class="box-header with-border">
-                    <h3 class="box-title">Horizontal Form</h3>
-                </div>
-                <form class="form-horizontal">
-                    <div class="box-body">
-                        <div class="form-group">
-                            @Html.DisplayNameFor(m => m.ProductDto.ProductName)
-                            <div class="col-sm-10">
+<div class="row">
+    <div class="col-md-12">
+        <div class="box box-info">
+            <div class="box-header with-border">
+                <h3 class="box-title">@ViewBag.Title</h3>
+            </div>
+            @using (Html.BeginForm("Add", "Product", new {  @class="form-horizontal"}))
+            {
+                @Html.AntiForgeryToken()
+                <div class="box-body">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-2">
+                                @Html.DisplayNameFor(m => m.ProductDto.ProductName)
+                            </div>
+                            <div class="col-md-4">
                                 @Html.TextBoxFor(m => m.ProductDto.ProductName, new { @class = "form-control" })
+                            </div>
+                            <div class="col-md-6">
                                 @Html.ValidationMessageFor(model => model.ProductDto.ProductName, "", new { @class = "text-danger" })
                             </div>
                         </div>
-                        <div class="form-group">
-                            @Html.DisplayNameFor(m => m.ProductDto.CategoryId)
-                            <div class="col-sm-10">
-                                @Html.DropDownListFor(m => m.ProductDto.CategoryId, new SelectList(Model.CategoryDropdown), new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-2">
+                                @Html.DisplayNameFor(m => m.ProductDto.CategoryId)
+                            </div>
+                            <div class="col-md-4">
+                                @Html.DropDownListFor(m => m.ProductDto.CategoryId, new SelectList(Model.CategoryDropdown,"CategoryId","CategoryName"), "-- Select Category --", new { @class = "form-control" })
+                            </div>
+                            <div class="col-md-6">
                                 @Html.ValidationMessageFor(model => model.ProductDto.CategoryId, "", new { @class = "text-danger" })
                             </div>
                         </div>
-                        <div class="form-group">
-                            @Html.DisplayNameFor(m => m.ProductDto.Price)
-                            <div class="col-sm-10">
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-2">
+                                @Html.DisplayNameFor(m => m.ProductDto.DisplayStatus)
+                            </div>
+                            <div class="col-md-4">
+                                @Html.DropDownListFor(m => m.ProductDto.DisplayStatus, new SelectList(Model.StatusDropdown, "Display", "Status"), "-- Display Status --", new { @class = "form-control" })
+                            </div>
+                            <div class="col-md-6">
+                                @Html.ValidationMessageFor(model => model.ProductDto.DisplayStatus, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-2">
+                                @Html.DisplayNameFor(m => m.ProductDto.Price)
+                            </div>
+                            <div class="col-md-4">
                                 @Html.TextBoxFor(m => m.ProductDto.Price, new { @class = "form-control" })
+                            </div>
+                            <div class="col-md-6">
                                 @Html.ValidationMessageFor(model => model.ProductDto.Price, "", new { @class = "text-danger" })
                             </div>
                         </div>
-                        <div class="form-group">
-                            @Html.DisplayNameFor(m => m.ProductDto.DiscountPrice)
-                            <div class="col-sm-10">
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-2">
+                                @Html.DisplayNameFor(m => m.ProductDto.DiscountPrice)
+                            </div>
+                            <div class="col-md-4">
                                 @Html.TextBoxFor(m => m.ProductDto.DiscountPrice, new { @class = "form-control" })
+                            </div>
+                            <div class="col-md-6">
                                 @Html.ValidationMessageFor(model => model.ProductDto.DiscountPrice, "", new { @class = "text-danger" })
                             </div>
                         </div>
-                        <div class="form-group">
-                            @Html.DisplayNameFor(m => m.ProductDto.Weight)
-                            <div class="col-sm-10">
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-2">
+                                @Html.DisplayNameFor(m => m.ProductDto.Weight)
+                            </div>
+                            <div class="col-md-4">
                                 @Html.TextBoxFor(m => m.ProductDto.Weight, new { @class = "form-control" })
+                            </div>
+                            <div class="col-md-6">
                                 @Html.ValidationMessageFor(model => model.ProductDto.Weight, "", new { @class = "text-danger" })
                             </div>
                         </div>
-                        <div class="form-group">
-                            @Html.DisplayNameFor(m => m.ProductDto.Description)
-                            <div class="col-sm-10">
-                                @Html.TextBoxFor(m => m.ProductDto.Description, new { @class = "form-control" })
-                                @Html.ValidationMessageFor(model => model.ProductDto.Description, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-2">
+                                @Html.DisplayNameFor(m => m.ProductDto.Description)
+                            </div>
+                            <div class="col-md-10">
+                                @Html.TextAreaFor(m => m.ProductDto.Description, new { id = "editor1", name = "editor1", rows = "10", cols = "80" })
                             </div>
                         </div>
-
-                    </div><!-- /.box-body -->
-                    <div class="box-footer">
-                        <button type="submit" class="btn btn-default">Cancel</button>
-                        <button type="submit" class="btn btn-info pull-right">Sign in</button>
-                    </div><!-- /.box-footer -->
-                </form>
-            </div><!-- /.box -->
-          </div>
+                    </div>
+                </div><!-- /.box-body -->
+                <div class="box-footer">
+                    <button type="submit" class="btn btn-default">Cancel</button>
+                    <button type="submit" class="btn btn-info pull-right">Save</button>
+                </div><!-- /.box-footer -->
+            }
+        </div><!-- /.box -->
     </div>
+</div>
+@section scripts{
+<!-- CK Editor -->
+<script src="https://cdn.ckeditor.com/4.4.3/standard/ckeditor.js"></script>
+@*<script src="~/admin-lte/js/ckeditor.js"></script>*@
+<script>
+      $(function () {
+        // Replace the <textarea id="editor1"> with a CKEditor
+        // instance, using default configuration.
+        CKEDITOR.replace('editor1');
+      });
+</script>
 }

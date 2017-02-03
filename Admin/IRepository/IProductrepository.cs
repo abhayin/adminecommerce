@@ -12,5 +12,8 @@ namespace Admin.IRepository
         Product Add(Product model);
         IEnumerable<Product> GetAllProducts();
         Product GetProductById(int Id);
+        IEnumerable<DisplayStatus> GetDisplayStatus();
+        void EnableProduct(int Id);
+        void DisableProduct(int Id);
     }
 }

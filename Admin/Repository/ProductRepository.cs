@@ -44,7 +44,7 @@ namespace Admin.Repository
         public void DisableProduct(int Id)
         {
             var product = db.Products.Where(p => p.ProductId == Id).FirstOrDefault();
-            product.Enabled = false;
+            product.DisplayStatus = false;
             db.Products.Attach(product);
             db.Entry<Product>(product).State = EntityState.Modified;
             db.SaveChanges();
@@ -53,7 +53,7 @@ namespace Admin.Repository
         public void EnableProduct(int Id)
         {
             var product = db.Products.Where(p => p.ProductId == Id).FirstOrDefault();
-            product.Enabled = true;
+            product.DisplayStatus = true;
             db.Products.Attach(product);
             db.Entry<Product>(product).State = EntityState.Modified;
             db.SaveChanges();
@@ -65,6 +65,11 @@ namespace Admin.Repository
             db.Entry<Product>(modelToUpdate).State = EntityState.Modified;
             db.SaveChanges();
             return modelToUpdate;
+        }
+
+        public IEnumerable<DisplayStatus> GetDisplayStatus()
+        {
+            return db.DisplayStatus.ToList();
         }
 
         public void Dispose()

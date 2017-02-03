@@ -15,8 +15,8 @@ namespace Admin.EntityConfiguration
                 .Property(p => p.ProductId)
                 .IsRequired();
 
-            HasOptional(p => p.Category)
-                .WithRequired(p => p.Product);
+            //HasOptional(p => p.Category)
+            //    .WithRequired(p => p.Product);
 
             Property(p=>p.ProductName)
                 .IsRequired()

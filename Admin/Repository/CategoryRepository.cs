@@ -20,9 +20,9 @@ namespace Admin.Repository
 
         public IEnumerable<CategoryDto> GetCategories()
         {
-            var categories = db.Categories.ToList().Select(Mapper.Map<Category, CategoryDto>);
+            var categories = db.Categories.ToList().Select(Mapper.Map<Category,CategoryDto>);
             Dispose();
-            return categories;
+            return categories.ToList();
         }
 
         public void Dispose()

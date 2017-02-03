@@ -24,12 +24,14 @@ namespace Admin.Models
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
+            this.Configuration.LazyLoadingEnabled = false;
         }
 
         public DbSet<Category> Categories { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderItems> OrderItems { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<DisplayStatus> DisplayStatus { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
