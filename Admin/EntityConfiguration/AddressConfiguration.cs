@@ -15,6 +15,9 @@ namespace Admin.EntityConfiguration
                 .Property(a => a.AddressId)
                 .IsRequired();
 
+            HasRequired(a => a.User)
+                .WithMany(a => a.Address)
+                .HasForeignKey(a => a.UserId);
             
         }
     }

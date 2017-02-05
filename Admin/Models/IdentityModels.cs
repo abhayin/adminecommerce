@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Admin.EntityConfiguration;
+using System.Collections.Generic;
 
 namespace Admin.Models
 {
@@ -17,6 +18,7 @@ namespace Admin.Models
             // Add custom user claims here
             return userIdentity;
         }
+        public ICollection<Address> Address { get; set; }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
@@ -35,6 +37,7 @@ namespace Admin.Models
         public DbSet<DisplayStatus> DisplayStatus { get; set; }
         public DbSet<Tags> Tags { get; set; }
         public DbSet<Address> Address { get; set; }
+        public DbSet<SocialInformation> SocialInformation { get; set; }
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -46,6 +49,7 @@ namespace Admin.Models
             modelBuilder.Configurations.Add(new TagConfiguration());
             modelBuilder.Configurations.Add(new OrderStatusConfiguration());
             modelBuilder.Configurations.Add(new AddressConfiguration());
+            modelBuilder.Configurations.Add(new SocialInformationConfiguration());
 
             base.OnModelCreating(modelBuilder);
         }

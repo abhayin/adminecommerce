@@ -189,6 +189,7 @@
     <Compile Include="EntityConfiguration\OrderItemConfiguration.cs" />
     <Compile Include="EntityConfiguration\OrderStatusConfiguration.cs" />
     <Compile Include="EntityConfiguration\ProductConfiguration.cs" />
+    <Compile Include="EntityConfiguration\SocialInformationConfiguration.cs" />
     <Compile Include="EntityConfiguration\TagConfiguration.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -247,6 +248,26 @@
     <Compile Include="Migrations\201702041900386_AddAddressModel.Designer.cs">
       <DependentUpon>201702041900386_AddAddressModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702050308036_DatetimeFieldAdded.cs" />
+    <Compile Include="Migrations\201702050308036_DatetimeFieldAdded.Designer.cs">
+      <DependentUpon>201702050308036_DatetimeFieldAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702050353544_ChangeTheDatatypeOfUserId.cs" />
+    <Compile Include="Migrations\201702050353544_ChangeTheDatatypeOfUserId.Designer.cs">
+      <DependentUpon>201702050353544_ChangeTheDatatypeOfUserId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702050355015_AddressMapToUser.cs" />
+    <Compile Include="Migrations\201702050355015_AddressMapToUser.Designer.cs">
+      <DependentUpon>201702050355015_AddressMapToUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702050404531_AddSocialInformationModelToDb.cs" />
+    <Compile Include="Migrations\201702050404531_AddSocialInformationModelToDb.Designer.cs">
+      <DependentUpon>201702050404531_AddSocialInformationModelToDb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702050654462_AddForeginKey.cs" />
+    <Compile Include="Migrations\201702050654462_AddForeginKey.Designer.cs">
+      <DependentUpon>201702050654462_AddForeginKey.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
@@ -259,6 +280,7 @@
     <Compile Include="Models\OrderItems.cs" />
     <Compile Include="Models\OrderStatus.cs" />
     <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\SocialInformation.cs" />
     <Compile Include="Models\Tags.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -842,6 +864,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702041900386_AddAddressModel.resx">
       <DependentUpon>201702041900386_AddAddressModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702050308036_DatetimeFieldAdded.resx">
+      <DependentUpon>201702050308036_DatetimeFieldAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702050353544_ChangeTheDatatypeOfUserId.resx">
+      <DependentUpon>201702050353544_ChangeTheDatatypeOfUserId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702050355015_AddressMapToUser.resx">
+      <DependentUpon>201702050355015_AddressMapToUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702050404531_AddSocialInformationModelToDb.resx">
+      <DependentUpon>201702050404531_AddSocialInformationModelToDb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702050654462_AddForeginKey.resx">
+      <DependentUpon>201702050654462_AddForeginKey.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -9,6 +9,11 @@ namespace Admin.Models
 {
     public class Product
     {
+        public Product()
+        {
+            ProductModifiedDate = DateTime.Now;
+            ProductAddedDate = DateTime.Now;
+        }
         public int ProductId { get; set; }
         public string ProductName { get; set; }
         
@@ -24,5 +29,7 @@ namespace Admin.Models
         public int TagId { get; set; }
         public Tags Tag { get; set; }
         public bool DisplayStatus { get; set; }
+        public DateTime ProductAddedDate { get; set; }
+        public DateTime ProductModifiedDate { get; set; }
     }
 }

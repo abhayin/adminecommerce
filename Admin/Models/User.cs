@@ -7,7 +7,7 @@ namespace Admin.Models
 {
     public class User
     {
-        public int UserId { get; set; }
+        public string UserId { get; set; }
         public string ShippingFirstName { get; set; }
         public string ShippingLastName { get; set; }
         public string ShippingAddressLine1 { get; set; }
