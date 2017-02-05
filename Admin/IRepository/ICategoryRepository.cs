@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Admin.IRepository
 {
-    public interface ICategoryRepository : IDisposable
+    public interface ICategoryRepository
     {
         IEnumerable<CategoryDto> GetCategories();
     }

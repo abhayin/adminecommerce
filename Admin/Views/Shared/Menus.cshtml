@@ -2,9 +2,43 @@
     <ul class="sidebar-menu">
         <li class="header">Menu</li>
         <li>
-            <a href="@(Url.Action("Index","Home"))">
-                <i class="fa fa-home fa-fw"></i> <span>Inicio</span>
+            <a href="#">
+                <i class="fa fa-dashboard"></i> <span>Product</span> <i class=""></i>
             </a>
+            <ul class="treeview-menu">
+                <li>
+                    <a href="@(Url.Action("Index","Product"))">
+                        <i class="fa fa-home fa-fw"></i> <span>Products</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="@(Url.Action("Setproduct", "Product"))">
+                        <i class="fa fa-home fa-fw"></i> <span>Add Product</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fa fa-dashboard"></i> <span>Orders</span> <i class=""></i>
+            </a>
+            <ul class="treeview-menu">
+                <li>
+                    <a href="@(Url.Action("Index","Product"))">
+                        <i class="fa fa-home fa-fw"></i> <span>Pending Orders</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="@(Url.Action("Setproduct", "Product"))">
+                        <i class="fa fa-home fa-fw"></i> <span>Dispatched Orders</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="@(Url.Action("Setproduct", "Product"))">
+                        <i class="fa fa-home fa-fw"></i> <span>Delivered Orders</span>
+                    </a>
+                </li>
+            </ul>
         </li>
        
         @if (User.IsInRole("Role"))

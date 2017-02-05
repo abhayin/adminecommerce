@@ -12,6 +12,8 @@ namespace Admin.Repository
         private readonly ApplicationDbContext db = new ApplicationDbContext();
         private IProductrepository _pr;
         private ICategoryRepository _cr;
+        private ITagRepository _tg;
+        private IOrderRepository _odr;
         
         public IProductrepository pr
         {
@@ -29,10 +31,27 @@ namespace Admin.Repository
             }
         }
 
-
-        public UnitOfWork()
+        public ITagRepository tg
         {
+            get
+            {
+                return _tg ?? (_tg = new TagRepository(db));
+            }
+        }
 
+        public IOrderRepository odr
+        {
+            get
+            {
+                return _odr ?? (_odr = new OrderRepository(db));
+            }
+        }
+
+        public UnitOfWork() { }
+        
+        public void dispose()
+        {
+            db.Dispose();
         }
 
 

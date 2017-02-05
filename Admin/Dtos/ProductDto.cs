@@ -20,10 +20,17 @@ namespace Admin.Dtos
 
         [Display(Name = "Discount Price")]
         public decimal DiscountPrice { get; set; }
+
+        [Display(Name = "Unit Available")]
+        public int UnitAvailable { get; set; }
         public decimal Weight { get; set; }
         
         [Display(Name = "Category")]
         public int CategoryId { get; set; }
+
+        [Display(Name="Tag")]
+        public int TagId { get; set; }
+
         public bool DisplayStatus { get; set; }
     }
 }

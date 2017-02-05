@@ -1,4 +1,5 @@
-﻿using Admin.Models;
+﻿using Admin.Dtos;
+using Admin.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Admin.IRepository
 {
-    public interface IProductrepository : IDisposable
+    public interface IProductrepository
     {
         Product Add(Product model);
         IEnumerable<Product> GetAllProducts();
@@ -15,5 +16,6 @@ namespace Admin.IRepository
         IEnumerable<DisplayStatus> GetDisplayStatus();
         void EnableProduct(int Id);
         void DisableProduct(int Id);
+        IEnumerable<ProductDto> GetDisabledProducts();
     }
 }

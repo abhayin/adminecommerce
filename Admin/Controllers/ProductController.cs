@@ -11,9 +11,6 @@ namespace Admin.Controllers
 {
     public class ProductController : Controller
     {
-        //private ProductRepository repo;
-        //private ICategoryRepository Icate;
-
         private IUnitOfWork repo;
 
         public ProductController()
@@ -23,7 +20,7 @@ namespace Admin.Controllers
         public ActionResult Index()
         {
             var pl = repo.pr.GetAllProducts();
-            return View();
+            return View(pl);
         }
 
         [HttpGet]
@@ -32,9 +29,10 @@ namespace Admin.Controllers
             var viewModel = new ProductViewModel()
             {
                 StatusDropdown = repo.pr.GetDisplayStatus(),
-                CategoryDropdown = repo.cr.GetCategories()
+                CategoryDropdown = repo.cr.GetCategories(),
+                TagsDropdown = repo.tg.GetTags()
             };
-
+            repo.dispose();
             return View(viewModel);
         }
 
@@ -87,6 +85,20 @@ namespace Admin.Controllers
         public ActionResult RemoveBetweenRange(int[] Ids)
         {
             return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public ActionResult DisabledProduct()
+        {
+            var products = repo.pr.GetDisabledProducts();
+            return View(products);
+        }
+
+        [HttpPost]
+        public ActionResult EnableProduct(int Id)
+        {
+            repo.pr.EnableProduct(Id);
+            return RedirectToAction("DisabledProduct");
         }
 
     }

@@ -10,7 +10,7 @@
             <div class="box-header with-border">
                 <h3 class="box-title">@ViewBag.Title</h3>
             </div>
-            @using (Html.BeginForm("Add", "Product", new {  @class="form-horizontal"}))
+            @using (Html.BeginForm("Add", "Product", new { @class = "form-horizontal" }))
             {
                 @Html.AntiForgeryToken()
                 <div class="box-body">
@@ -27,32 +27,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-md-2">
-                                @Html.DisplayNameFor(m => m.ProductDto.CategoryId)
-                            </div>
-                            <div class="col-md-4">
-                                @Html.DropDownListFor(m => m.ProductDto.CategoryId, new SelectList(Model.CategoryDropdown,"CategoryId","CategoryName"), "-- Select Category --", new { @class = "form-control" })
-                            </div>
-                            <div class="col-md-6">
-                                @Html.ValidationMessageFor(model => model.ProductDto.CategoryId, "", new { @class = "text-danger" })
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-md-2">
-                                @Html.DisplayNameFor(m => m.ProductDto.DisplayStatus)
-                            </div>
-                            <div class="col-md-4">
-                                @Html.DropDownListFor(m => m.ProductDto.DisplayStatus, new SelectList(Model.StatusDropdown, "Display", "Status"), "-- Display Status --", new { @class = "form-control" })
-                            </div>
-                            <div class="col-md-6">
-                                @Html.ValidationMessageFor(model => model.ProductDto.DisplayStatus, "", new { @class = "text-danger" })
-                            </div>
-                        </div>
-                    </div>
+
                     <div class="form-group">
                         <div class="row">
                             <div class="col-md-2">
@@ -82,13 +57,52 @@
                     <div class="form-group">
                         <div class="row">
                             <div class="col-md-2">
-                                @Html.DisplayNameFor(m => m.ProductDto.Weight)
+                                @Html.DisplayNameFor(m => m.ProductDto.UnitAvailable)
                             </div>
                             <div class="col-md-4">
-                                @Html.TextBoxFor(m => m.ProductDto.Weight, new { @class = "form-control" })
+                                @Html.TextBoxFor(m => m.ProductDto.UnitAvailable, new { @class = "form-control" })
                             </div>
                             <div class="col-md-6">
-                                @Html.ValidationMessageFor(model => model.ProductDto.Weight, "", new { @class = "text-danger" })
+                                @Html.ValidationMessageFor(model => model.ProductDto.UnitAvailable, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-2">
+                                @Html.DisplayNameFor(m => m.ProductDto.CategoryId)
+                            </div>
+                            <div class="col-md-4">
+                                @Html.DropDownListFor(m => m.ProductDto.CategoryId, new SelectList(Model.CategoryDropdown, "CategoryId", "CategoryName"), "-- Select Category --", new { @class = "form-control" })
+                            </div>
+                            <div class="col-md-6">
+                                @Html.ValidationMessageFor(model => model.ProductDto.CategoryId, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-2">
+                                @Html.DisplayNameFor(m => m.ProductDto.DisplayStatus)
+                            </div>
+                            <div class="col-md-4">
+                                @Html.DropDownListFor(m => m.ProductDto.DisplayStatus, new SelectList(Model.StatusDropdown, "Display", "Status"), "-- Display Status --", new { @class = "form-control" })
+                            </div>
+                            <div class="col-md-6">
+                                @Html.ValidationMessageFor(model => model.ProductDto.DisplayStatus, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-2">
+                                @Html.DisplayNameFor(m => m.ProductDto.TagId)
+                            </div>
+                            <div class="col-md-4">
+                                @Html.DropDownListFor(m => m.ProductDto.TagId, new SelectList(Model.TagsDropdown, "TagId", "TagName"), "-- Select Tag --", new { @class = "form-control" })
+                            </div>
+                            <div class="col-md-6">
+                                @Html.ValidationMessageFor(model => model.ProductDto.TagId, "", new { @class = "text-danger" })
                             </div>
                         </div>
                     </div>
@@ -112,14 +126,14 @@
     </div>
 </div>
 @section scripts{
-<!-- CK Editor -->
-<script src="https://cdn.ckeditor.com/4.4.3/standard/ckeditor.js"></script>
-@*<script src="~/admin-lte/js/ckeditor.js"></script>*@
-<script>
-      $(function () {
-        // Replace the <textarea id="editor1"> with a CKEditor
-        // instance, using default configuration.
-        CKEDITOR.replace('editor1');
-      });
-</script>
+    <!-- CK Editor -->
+    <script src="https://cdn.ckeditor.com/4.4.3/standard/ckeditor.js"></script>
+    @*<script src="~/admin-lte/js/ckeditor.js"></script>*@
+    <script>
+        $(function () {
+            // Replace the <textarea id="editor1"> with a CKEditor
+            // instance, using default configuration.
+            CKEDITOR.replace('editor1');
+        });
+    </script>
 }

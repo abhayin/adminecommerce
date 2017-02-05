@@ -30,8 +30,12 @@ namespace Admin.Models
         public DbSet<Category> Categories { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderItems> OrderItems { get; set; }
+        public DbSet<OrderStatus> OrderStatus { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<DisplayStatus> DisplayStatus { get; set; }
+        public DbSet<Tags> Tags { get; set; }
+        public DbSet<Address> Address { get; set; }
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -39,6 +43,9 @@ namespace Admin.Models
             modelBuilder.Configurations.Add(new CategoryConfiguration());
             modelBuilder.Configurations.Add(new OrderConfiguration());
             modelBuilder.Configurations.Add(new OrderItemConfiguration());
+            modelBuilder.Configurations.Add(new TagConfiguration());
+            modelBuilder.Configurations.Add(new OrderStatusConfiguration());
+            modelBuilder.Configurations.Add(new AddressConfiguration());
 
             base.OnModelCreating(modelBuilder);
         }

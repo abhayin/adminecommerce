@@ -37,6 +37,8 @@ namespace Admin
                       "~/Content/js/demo.js",
                       "~/Content/js/AdminLTE.js",
                       "~/Content/plugins/iCheck/icheck.min.js",
+                      "~/Scripts/DataTables/jquery.dataTables.js",
+                      "~/Scripts/DataTables/dataTables.bootstrap.js",
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
@@ -47,6 +49,7 @@ namespace Admin
                       "~/admin-lte/css/skins/skin-black.min.css",
                       "~/Content/plugins/iCheck/flat/blue.css",
                       "~/Content/css/please-wait.css",
+                      "~/Content/DataTables/css/dataTables.bootstrap.css",
                       "~/Content/site.css"));
         }
     }

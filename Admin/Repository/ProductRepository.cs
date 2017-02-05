@@ -6,6 +6,7 @@ using System.Data.Entity;
 using Admin.Models;
 using Admin.IRepository;
 using Admin.Dtos;
+using AutoMapper;
 
 namespace Admin.Repository
 {
@@ -22,7 +23,6 @@ namespace Admin.Repository
         {
             db.Products.Add(model);
             db.SaveChanges();
-            Dispose();
             return model;
         }
 
@@ -59,6 +59,15 @@ namespace Admin.Repository
             db.SaveChanges();
         }
 
+        public IEnumerable<ProductDto> GetDisabledProducts()
+        {
+            var products = db.Products
+                .Where(p => p.DisplayStatus == false)
+                .ToList()
+                .Select(Mapper.Map<Product,ProductDto>);
+            return products.ToList();
+        }
+
         public Product Update(Product modelToUpdate)
         {
             db.Products.Attach(modelToUpdate);
@@ -71,11 +80,5 @@ namespace Admin.Repository
         {
             return db.DisplayStatus.ToList();
         }
-
-        public void Dispose()
-        {
-            db.Dispose();
-        }
-
     }
 }
