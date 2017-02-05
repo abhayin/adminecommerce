@@ -1,15 +1,15 @@
-﻿<li class="dropdown user user-menu">
+﻿@using Microsoft.AspNet.Identity
+<li class="dropdown user user-menu">
     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
         <img src="~/assets/img/logo.jpg" class="user-image" alt="User Image">
-        <span class="hidden-xs">Abhay In</span>
+        <span class="hidden-xs">@User.Identity.Name</span>
     </a>
     <ul class="dropdown-menu">
         <!-- User image -->
         <li class="user-header">
             <img src="~/Content/img/logo.jpg" class="img-circle" alt="User Image">
             <p>
-                Abhay
-                <small>abhay.in@livecom</small>
+                <small>@User.Identity.Name</small>
             </p>
         </li>
         <!-- Menu Body -->
@@ -32,7 +32,7 @@
                 <a href="#" class="btn btn-default btn-flat"><i class="fa fa-user"></i>&nbsp;Profile</a>
             </div>
             <div class="pull-right">
-                @using (Html.BeginForm("LogOff", "Conta",new{Area =""}))
+                @using (Html.BeginForm("LogOff", "Account",new{Area =""}))
                 {
                     @Html.AntiForgeryToken()
                     <button class="btn btn-default btn-flat" type="submit"><i class="fa fa-sign-out"></i>&nbsp;Sign out</button>

@@ -18,6 +18,7 @@ namespace Admin.Models
             // Add custom user claims here
             return userIdentity;
         }
+        public string FullName { get; set; }
         public ICollection<Address> Address { get; set; }
     }
 

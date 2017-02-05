@@ -14,6 +14,7 @@ namespace Admin.Repository
         private ICategoryRepository _cr;
         private ITagRepository _tg;
         private IOrderRepository _odr;
+        private ISocialRepository _sinfo;
         
         public IProductrepository pr
         {
@@ -44,6 +45,14 @@ namespace Admin.Repository
             get
             {
                 return _odr ?? (_odr = new OrderRepository(db));
+            }
+        }
+
+        public ISocialRepository sinfo
+        {
+            get
+            {
+                return _sinfo ?? (_sinfo = new SocialRepository(db));
             }
         }
 

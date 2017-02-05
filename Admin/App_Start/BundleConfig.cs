@@ -51,6 +51,18 @@ namespace Admin
                       "~/Content/css/please-wait.css",
                       "~/Content/DataTables/css/dataTables.bootstrap.css",
                       "~/Content/site.css"));
+
+            bundles.Add(new StyleBundle("~/Content/Register").Include(
+                      "~/Content/css/bootstrap.min.css",
+                      "~/Content/css/font-awesome.min.css",
+                      "~/Content/css/AdminLTE.min.css",
+                      "~/Content/plugins/iCheck/flat/blue.css"));
+
+            bundles.Add(new ScriptBundle("~/Scripts/Register").Include(
+                      "~/Scripts/jquery-2.1.3.js",
+                      "~/Content/js/bootstrap.min.js",
+                      "~/Content/plugins/iCheck/icheck.min.js"));
+
         }
     }
 }

@@ -1,0 +1,156 @@
+﻿@model Admin.ViewModels.SocialViewModel
+@{
+    ViewBag.Title = "Information";
+    Layout = "~/Views/Shared/_LayOut.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="box box-info">
+            <div class="box-header with-border">
+                <h3 class="box-title">@ViewBag.Title</h3>
+            </div>
+            @using (Html.BeginForm("Add", "Product", new { @class = "form-horizontal" }))
+            {
+                @Html.AntiForgeryToken()
+                <div class="box-body">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-2">
+                                @Html.DisplayNameFor(m => m.SocialInformation.StoreName)
+                            </div>
+                            <div class="col-md-4">
+                                @Html.TextBoxFor(m => m.SocialInformation.StoreName, new { @class = "form-control" })
+                            </div>
+                            <div class="col-md-6">
+                                @Html.ValidationMessageFor(model => model.SocialInformation.StoreName, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-2">
+                                @Html.DisplayNameFor(m => m.SocialInformation.StoreEmail)
+                            </div>
+                            <div class="col-md-4">
+                                @Html.TextBoxFor(m => m.SocialInformation.StoreEmail, new { @class = "form-control" })
+                            </div>
+                            <div class="col-md-6">
+                                @Html.ValidationMessageFor(model => model.SocialInformation.StoreEmail, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-2">
+                                @Html.DisplayNameFor(m => m.SocialInformation.StoreMobileNumber)
+                            </div>
+                            <div class="col-md-4">
+                                @Html.TextBoxFor(m => m.SocialInformation.StoreMobileNumber, new { @class = "form-control" })
+                            </div>
+                            <div class="col-md-6">
+                                @Html.ValidationMessageFor(model => model.SocialInformation.StoreMobileNumber, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-2">
+                                @Html.DisplayNameFor(m => m.SocialInformation.StoreAddressLine1)
+                            </div>
+                            <div class="col-md-4">
+                                @Html.TextBoxFor(m => m.SocialInformation.StoreAddressLine1, new { @class = "form-control" })
+                            </div>
+                            <div class="col-md-6">
+                                @Html.ValidationMessageFor(model => model.SocialInformation.StoreAddressLine1, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-2">
+                                @Html.DisplayNameFor(m => m.SocialInformation.StoreAddressLine2)
+                            </div>
+                            <div class="col-md-4">
+                                @Html.TextBoxFor(m => m.SocialInformation.StoreAddressLine2, new { @class = "form-control" })
+                            </div>
+                            <div class="col-md-6">
+                                @Html.ValidationMessageFor(model => model.SocialInformation.StoreAddressLine2, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-2">
+                                @Html.DisplayNameFor(m => m.SocialInformation.StoreCity)
+                            </div>
+                            <div class="col-md-4">
+                                @Html.TextBoxFor(m => m.SocialInformation.StoreCity, new { @class = "form-control" })
+                            </div>
+                            <div class="col-md-6">
+                                @Html.ValidationMessageFor(model => model.SocialInformation.StoreCity, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-2">
+                                @Html.DisplayNameFor(m => m.SocialInformation.StoreState)
+                            </div>
+                            <div class="col-md-4">
+                                @Html.TextBoxFor(m => m.SocialInformation.StoreState, new { @class = "form-control" })
+                            </div>
+                            <div class="col-md-6">
+                                @Html.ValidationMessageFor(model => model.SocialInformation.StoreState, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-2">
+                                @Html.DisplayNameFor(m => m.SocialInformation.StoreCountry)
+                            </div>
+                            <div class="col-md-4">
+                                @Html.TextBoxFor(m => m.SocialInformation.StoreCountry, new { @class = "form-control" })
+                            </div>
+                            <div class="col-md-6">
+                                @Html.ValidationMessageFor(model => model.SocialInformation.StoreCountry, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-2">
+                                @Html.DisplayNameFor(m => m.SocialInformation.StorePostalCode)
+                            </div>
+                            <div class="col-md-4">
+                                @Html.TextBoxFor(m => m.SocialInformation.StorePostalCode, new { @class = "form-control" })
+                            </div>
+                            <div class="col-md-6">
+                                @Html.ValidationMessageFor(model => model.SocialInformation.StorePostalCode, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-2">
+                                @Html.DisplayNameFor(m => m.SocialInformation.Newsletter)
+                            </div>
+                            <div class="col-md-4">
+                                @Html.TextAreaFor(m => m.SocialInformation.Newsletter, new { @class = "form-control" })
+                            </div>
+                            <div class="col-md-6">
+                                @Html.ValidationMessageFor(model => model.SocialInformation.Newsletter, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- /.box-body -->
+                <div class="box-footer">
+                    <button type="submit" class="btn btn-default">Cancel</button>
+                    <button type="submit" class="btn btn-info pull-right">Save</button>
+                </div><!-- /.box-footer -->
+            }
+        </div><!-- /.box -->
+    </div>
+</div>
+

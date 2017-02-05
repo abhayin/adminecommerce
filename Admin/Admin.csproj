@@ -179,6 +179,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\SocialController.cs" />
     <Compile Include="Dtos\CategoryDto.cs" />
     <Compile Include="Dtos\OrderDto.cs" />
     <Compile Include="Dtos\ProductDto.cs" />
@@ -198,6 +199,7 @@
     <Compile Include="IRepository\ICategoryRepository.cs" />
     <Compile Include="IRepository\IOrderRepository.cs" />
     <Compile Include="IRepository\IProductrepository.cs" />
+    <Compile Include="IRepository\ISocialRepository.cs" />
     <Compile Include="IRepository\ITagRepository.cs" />
     <Compile Include="IRepository\IUnitOfWork.cs" />
     <Compile Include="Migrations\201701261749572_InitialModel.cs" />
@@ -268,6 +270,14 @@
     <Compile Include="Migrations\201702050654462_AddForeginKey.Designer.cs">
       <DependentUpon>201702050654462_AddForeginKey.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702051211453_AddFullNameToIdentityModel.cs" />
+    <Compile Include="Migrations\201702051211453_AddFullNameToIdentityModel.Designer.cs">
+      <DependentUpon>201702051211453_AddFullNameToIdentityModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702051215487_AddFullNameToApplicationUser.cs" />
+    <Compile Include="Migrations\201702051215487_AddFullNameToApplicationUser.Designer.cs">
+      <DependentUpon>201702051215487_AddFullNameToApplicationUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
@@ -287,11 +297,13 @@
     <Compile Include="Repository\CategoryRepository.cs" />
     <Compile Include="Repository\OrderRepository.cs" />
     <Compile Include="Repository\ProductRepository.cs" />
+    <Compile Include="Repository\SocialRepository.cs" />
     <Compile Include="Repository\TagRepository.cs" />
     <Compile Include="Repository\UnitOfWork.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\OrderViewModel.cs" />
     <Compile Include="ViewModels\ProductViewModel.cs" />
+    <Compile Include="ViewModels\SocialViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="admin-lte\css\AdminLTE.css" />
@@ -820,6 +832,8 @@
     <Content Include="Views\Product\SetProduct.cshtml" />
     <Content Include="Views\Product\DisabledProduct.cshtml" />
     <Content Include="Views\Order\Index.cshtml" />
+    <Content Include="Views\Social\Information.cshtml" />
+    <Content Include="Views\Shared\_LoginLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -879,6 +893,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702050654462_AddForeginKey.resx">
       <DependentUpon>201702050654462_AddForeginKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702051211453_AddFullNameToIdentityModel.resx">
+      <DependentUpon>201702051211453_AddFullNameToIdentityModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702051215487_AddFullNameToApplicationUser.resx">
+      <DependentUpon>201702051215487_AddFullNameToApplicationUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
